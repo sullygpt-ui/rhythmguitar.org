@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 50" fill="none">
+  <!-- Acoustic guitar silhouette - leaning right -->
+  <g transform="translate(8, 2) rotate(15, 20, 25) scale(0.68)">
+    <!-- Headstock -->
+    <path d="M23 0 L31 0 L32 10 L22 10 Z" fill="#f59e0b"/>
+    <!-- Tuning pegs -->
+    <rect x="19" y="1" width="4" height="1.5" rx="0.5" fill="#f59e0b"/>
+    <rect x="19" y="4" width="4" height="1.5" rx="0.5" fill="#f59e0b"/>
+    <rect x="19" y="7" width="4" height="1.5" rx="0.5" fill="#f59e0b"/>
+    <rect x="31" y="1" width="4" height="1.5" rx="0.5" fill="#f59e0b"/>
+    <rect x="31" y="4" width="4" height="1.5" rx="0.5" fill="#f59e0b"/>
+    <rect x="31" y="7" width="4" height="1.5" rx="0.5" fill="#f59e0b"/>
+    <!-- Neck -->
+    <rect x="25" y="10" width="4" height="22" fill="#f59e0b"/>
+    <!-- Guitar body - upper bout -->
+    <ellipse cx="27" cy="38" rx="12" ry="9" fill="#f59e0b"/>
+    <!-- Guitar body - lower bout -->
+    <ellipse cx="27" cy="50" rx="16" ry="12" fill="#f59e0b"/>
+    <!-- Sound hole (cutout) -->
+    <circle cx="27" cy="42" r="5" fill="#0a0a0f"/>
+  </g>
+  <!-- Text -->
+  <text x="48" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="36">
+    <tspan fill="#3b55e6">Rhythm</tspan><tspan fill="#e5e7eb">Guitar</tspan><tspan fill="#f59e0b" font-size="24" font-weight="600">.org</tspan>
+  </text>
+  <rect x="48" y="44" width="200" height="2" rx="1" fill="url(#logoGrad)"/>
+  <defs>
+    <linearGradient id="logoGrad" x1="48" y1="0" x2="248" y2="0">
+      <stop offset="0%" stop-color="#3b55e6"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+</svg>

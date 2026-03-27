@@ -1,26 +1,189 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: #3b55e6;
+  --color-primary-light: #5b73f0;
+  --color-primary-dark: #2a3eb8;
+  --color-accent: #f59e0b;
+  --color-accent-light: #fbbf24;
+  --color-dark-900: #0a0a0f;
+  --color-dark-800: #111118;
+  --color-dark-700: #1a1a2e;
+  --color-dark-600: #252540;
+  --color-dark-500: #32325a;
+  --color-gray-400: #9ca3af;
+  --color-gray-300: #d1d5db;
+  --color-gray-200: #e5e7eb;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0a0a0f;
+  color: #e5e7eb;
+  font-family: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Guitar string decorative lines */
+.guitar-strings {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 24px,
+      rgba(59, 85, 230, 0.08) 24px,
+      rgba(59, 85, 230, 0.08) 25px
+    );
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #3b55e6, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 85, 230, 0.15);
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(59, 85, 230, 0.3), 0 0 60px rgba(59, 85, 230, 0.1);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3), 0 0 60px rgba(245, 158, 11, 0.1);
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #3b55e6, #f59e0b, #3b55e6);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Subtle floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
+/* Staggered fade */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+
+/* Section divider with guitar string look */
+.string-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 85, 230, 0.5), rgba(245, 158, 11, 0.5), transparent);
+}
+
+/* Pulsing dot for "live" feel */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* Rhythm grid pattern */
+.rhythm-grid-bg {
+  background-image:
+    linear-gradient(rgba(59, 85, 230, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 85, 230, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Prose styles for content pages */
+.prose-rhythm h2 {
+  color: #e5e7eb;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.prose-rhythm h3 {
+  color: #d1d5db;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-rhythm p {
+  color: #9ca3af;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.prose-rhythm ul, .prose-rhythm ol {
+  color: #9ca3af;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose-rhythm li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.prose-rhythm strong {
+  color: #e5e7eb;
+}
+
+.prose-rhythm a {
+  color: #5b73f0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-rhythm a:hover {
+  color: #f59e0b;
+}
+
+.prose-rhythm blockquote {
+  border-left: 3px solid #3b55e6;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #9ca3af;
+}
+
+.prose-rhythm code {
+  background: #1a1a2e;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #f59e0b;
 }
