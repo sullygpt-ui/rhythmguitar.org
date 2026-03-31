@@ -51,8 +51,8 @@ export async function GET() {
     
     // Return summary stats
     const today = new Date().toISOString().split('T')[0];
-    const todayClicks = clicks.filter(click => 
-      click.timestamp.startsWith(today)
+    const todayClicks = clicks.filter((click: any) => 
+      click.timestamp && click.timestamp.startsWith(today)
     );
     
     return NextResponse.json({
