@@ -1,4 +1,5 @@
 import { createMetadata } from '@/lib/metadata';
+import { publishedOn } from '@/lib/publishDates';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQSection from '@/components/FAQSection';
 
@@ -25,8 +26,8 @@ export default function GuitarTimingTipsPage() {
     description: '10 practical tips to develop rock-solid timing and groove on guitar.',
     author: { '@type': 'Organization', name: 'RhythmGuitar.org' },
     publisher: { '@type': 'Organization', name: 'RhythmGuitar.org' },
-    datePublished: '2026-02-22',
-    dateModified: '2026-02-22',
+    datePublished: publishedOn('/guitar-timing-tips'),
+    dateModified: publishedOn('/guitar-timing-tips'),
   };
 
   const faqJsonLd = {

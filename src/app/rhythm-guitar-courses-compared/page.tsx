@@ -1,4 +1,5 @@
 import { createMetadata } from '@/lib/metadata';
+import { publishedOn } from '@/lib/publishDates';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQSection from '@/components/FAQSection';
 import Link from 'next/link';
@@ -125,8 +126,8 @@ export default function CoursesComparedPage() {
     description: 'A detailed comparison of the best rhythm guitar courses and learning platforms available in 2026.',
     author: { '@type': 'Organization', name: 'RhythmGuitar.org' },
     publisher: { '@type': 'Organization', name: 'RhythmGuitar.org' },
-    datePublished: '2026-02-27',
-    dateModified: '2026-02-27',
+    datePublished: publishedOn('/rhythm-guitar-courses-compared'),
+    dateModified: publishedOn('/rhythm-guitar-courses-compared'),
   };
 
   return (
@@ -196,7 +197,7 @@ export default function CoursesComparedPage() {
       <section className="max-w-4xl mx-auto px-4 py-16">
         <h2 className="text-2xl font-bold text-white mb-12 text-center">Detailed Breakdown</h2>
 
-        {courses.map((course, idx) => (
+        {courses.map((course) => (
           <div key={course.name} className={`mb-12 ${course.highlight ? 'glass-card gradient-border' : 'glass-card'} rounded-xl p-6 md:p-8`}>
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
               <div>

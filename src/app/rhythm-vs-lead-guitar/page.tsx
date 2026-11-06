@@ -1,4 +1,5 @@
 import { createMetadata } from '@/lib/metadata';
+import { publishedOn } from '@/lib/publishDates';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQSection from '@/components/FAQSection';
 
@@ -25,8 +26,8 @@ export default function RhythmVsLeadGuitarPage() {
     description: 'A comprehensive comparison of rhythm and lead guitar roles, skills, and techniques.',
     author: { '@type': 'Organization', name: 'RhythmGuitar.org' },
     publisher: { '@type': 'Organization', name: 'RhythmGuitar.org' },
-    datePublished: '2026-02-21',
-    dateModified: '2026-02-21',
+    datePublished: publishedOn('/rhythm-vs-lead-guitar'),
+    dateModified: publishedOn('/rhythm-vs-lead-guitar'),
   };
 
   const faqJsonLd = {

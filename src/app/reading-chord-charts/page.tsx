@@ -1,4 +1,5 @@
 import { createMetadata } from '@/lib/metadata';
+import { publishedOn } from '@/lib/publishDates';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQSection from '@/components/FAQSection';
 
@@ -25,8 +26,8 @@ export default function ReadingChordChartsPage() {
     description: 'Complete guide to reading guitar chord charts, diagrams, and rhythm notation.',
     author: { '@type': 'Organization', name: 'RhythmGuitar.org' },
     publisher: { '@type': 'Organization', name: 'RhythmGuitar.org' },
-    datePublished: '2026-02-17',
-    dateModified: '2026-02-17',
+    datePublished: publishedOn('/reading-chord-charts'),
+    dateModified: publishedOn('/reading-chord-charts'),
   };
 
   const faqJsonLd = {

@@ -1,5 +1,6 @@
 import { createMetadata } from '@/lib/metadata';
 import AffiliateCTA from '@/components/AffiliateCTA';
+import Link from 'next/link';
 
 export const metadata = createMetadata({
   title: '10 Essential Strumming Patterns Every Guitarist Should Know',
@@ -120,7 +121,7 @@ export default function StrummingPatternsPage() {
           These 10 patterns give you a solid foundation, but strumming mastery goes deeper. Advanced skills include <a href="/syncopation-guitar">syncopation</a>, dynamics (playing louder and softer within a pattern), <a href="/palm-muting-technique">palm muting</a> for percussive effects, and developing your own patterns by ear.
         </p>
         <p>
-          For a structured, step-by-step approach to mastering all of these skills, check out <a href="/go/rrg1">Real Rhythm Guitar Level 1</a>. It covers all 10 of these pattern types and more, with video demonstrations and a printable workbook. Read our <a href="/best-rhythm-guitar-course">full review</a>.
+          For a structured, step-by-step approach to mastering all of these skills, check out <Link href="/go/rrg1" prefetch={false}>Real Rhythm Guitar Level 1</Link>. It covers all 10 of these pattern types and more, with video demonstrations and a printable workbook. Read our <a href="/best-rhythm-guitar-course">full review</a>.
         </p>
         <p>
           Also explore our other guides: <a href="/guitar-counting">counting rhythm</a>, <a href="/chord-changes">faster chord changes</a>, and <a href="/guitar-timing-tips">timing improvement tips</a>.

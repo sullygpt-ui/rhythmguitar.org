@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { createMetadata } from '@/lib/metadata';
+import { publishedOn } from '@/lib/publishDates';
 
 export const metadata = createMetadata({
   title: 'Rhythm Guitar Blog — Articles & Guides',
@@ -9,17 +10,17 @@ export const metadata = createMetadata({
 });
 
 const posts = [
-  { href: '/rhythm-guitar-courses-compared', image: '/images/studio.jpg', title: 'Rhythm Guitar Courses Compared: Which One Is Right for You?', excerpt: 'A side-by-side look at the rhythm guitar courses worth considering — what each one covers, who it suits, and what it costs.', date: '2026-03-27' },
-  { href: '/learn-rhythm-guitar', image: '/images/acoustic-guitar.jpg', title: 'How to Learn Rhythm Guitar: The Complete Beginner\'s Guide', excerpt: 'Everything you need to know to start your rhythm guitar journey — from what rhythm guitar is to building your first practice routine.', date: '2026-02-15' },
-  { href: '/strumming-patterns', image: '/images/fretboard.jpg', title: '10 Essential Strumming Patterns Every Guitarist Should Know', excerpt: 'From basic downstrokes to advanced syncopated patterns, these 10 patterns will cover 90% of the songs you want to play.', date: '2026-02-10' },
-  { href: '/guitar-counting', image: '/images/electric-guitar.jpg', title: 'How to Count Rhythm on Guitar: Quarter Notes to Sixteenths', excerpt: 'Master the counting system that every musician uses. Learn quarter notes, eighth notes, sixteenths, and how to internalize the beat.', date: '2026-02-05' },
-  { href: '/palm-muting-technique', image: '/images/guitar-amp.jpg', title: 'Palm Muting on Guitar: Technique, Tips & Exercises', excerpt: 'The definitive guide to palm muting — hand position, pressure control, and exercises for rock, metal, and acoustic styles.', date: '2026-01-30' },
-  { href: '/chord-changes', image: '/images/playing-guitar.jpg', title: 'How to Change Chords Faster on Guitar: 7 Proven Techniques', excerpt: 'Struggling with chord transitions? These 7 techniques will help you switch chords smoothly without losing the beat.', date: '2026-01-25' },
-  { href: '/reading-chord-charts', image: '/images/hero-guitar.jpg', title: 'How to Read Guitar Chord Charts & Sheets Like a Pro', excerpt: 'Decode chord diagrams, lead sheets, and rhythm notation. Everything you need to walk into a jam session prepared.', date: '2026-01-20' },
-  { href: '/syncopation-guitar', image: '/images/acoustic-guitar.jpg', title: 'Syncopation on Guitar: What It Is and How to Master It', excerpt: 'Syncopation is what makes music groove. Learn what it is, hear examples in funk, reggae, and rock, and practice exercises to develop your feel.', date: '2026-01-15' },
-  { href: '/rhythm-vs-lead-guitar', image: '/images/fretboard.jpg', title: 'Rhythm Guitar vs Lead Guitar: What\'s the Difference?', excerpt: 'A clear breakdown of rhythm and lead guitar roles, skills, and which one you should learn first.', date: '2026-01-10' },
-  { href: '/guitar-timing-tips', image: '/images/electric-guitar.jpg', title: '10 Tips to Improve Your Guitar Timing and Feel', excerpt: 'Practical advice for developing rock-solid timing — from metronome exercises to playing with backing tracks.', date: '2026-01-05' },
-  { href: '/best-rhythm-guitar-course', image: '/images/studio.jpg', title: 'Best Rhythm Guitar Course Online (2026 Review)', excerpt: 'We reviewed the top rhythm guitar courses available in 2026. Here\'s our in-depth look at what\'s worth your money.', date: '2026-01-01' },
+  { href: '/rhythm-guitar-courses-compared', image: '/images/studio.jpg', title: 'Rhythm Guitar Courses Compared: Which One Is Right for You?', excerpt: 'A side-by-side look at the rhythm guitar courses worth considering — what each one covers, who it suits, and what it costs.' },
+  { href: '/learn-rhythm-guitar', image: '/images/acoustic-guitar.jpg', title: 'How to Learn Rhythm Guitar: The Complete Beginner\'s Guide', excerpt: 'Everything you need to know to start your rhythm guitar journey — from what rhythm guitar is to building your first practice routine.' },
+  { href: '/strumming-patterns', image: '/images/fretboard.jpg', title: '10 Essential Strumming Patterns Every Guitarist Should Know', excerpt: 'From basic downstrokes to advanced syncopated patterns, these 10 patterns will cover 90% of the songs you want to play.' },
+  { href: '/guitar-counting', image: '/images/electric-guitar.jpg', title: 'How to Count Rhythm on Guitar: Quarter Notes to Sixteenths', excerpt: 'Master the counting system that every musician uses. Learn quarter notes, eighth notes, sixteenths, and how to internalize the beat.' },
+  { href: '/palm-muting-technique', image: '/images/guitar-amp.jpg', title: 'Palm Muting on Guitar: Technique, Tips & Exercises', excerpt: 'The definitive guide to palm muting — hand position, pressure control, and exercises for rock, metal, and acoustic styles.' },
+  { href: '/chord-changes', image: '/images/playing-guitar.jpg', title: 'How to Change Chords Faster on Guitar: 7 Proven Techniques', excerpt: 'Struggling with chord transitions? These 7 techniques will help you switch chords smoothly without losing the beat.' },
+  { href: '/reading-chord-charts', image: '/images/hero-guitar.jpg', title: 'How to Read Guitar Chord Charts & Sheets Like a Pro', excerpt: 'Decode chord diagrams, lead sheets, and rhythm notation. Everything you need to walk into a jam session prepared.' },
+  { href: '/syncopation-guitar', image: '/images/acoustic-guitar.jpg', title: 'Syncopation on Guitar: What It Is and How to Master It', excerpt: 'Syncopation is what makes music groove. Learn what it is, hear examples in funk, reggae, and rock, and practice exercises to develop your feel.' },
+  { href: '/rhythm-vs-lead-guitar', image: '/images/fretboard.jpg', title: 'Rhythm Guitar vs Lead Guitar: What\'s the Difference?', excerpt: 'A clear breakdown of rhythm and lead guitar roles, skills, and which one you should learn first.' },
+  { href: '/guitar-timing-tips', image: '/images/electric-guitar.jpg', title: '10 Tips to Improve Your Guitar Timing and Feel', excerpt: 'Practical advice for developing rock-solid timing — from metronome exercises to playing with backing tracks.' },
+  { href: '/best-rhythm-guitar-course', image: '/images/studio.jpg', title: 'Best Rhythm Guitar Course Online (2026 Review)', excerpt: 'We reviewed the top rhythm guitar courses available in 2026. Here\'s our in-depth look at what\'s worth your money.' },
 ];
 
 export default function BlogPage() {
@@ -42,7 +43,7 @@ export default function BlogPage() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent" />
-              <time className="absolute bottom-3 left-4 text-xs text-gray-400 bg-dark-900/60 backdrop-blur-sm px-2 py-1 rounded">{post.date}</time>
+              <time className="absolute bottom-3 left-4 text-xs text-gray-400 bg-dark-900/60 backdrop-blur-sm px-2 py-1 rounded">{publishedOn(post.href)}</time>
             </div>
             <div className="p-6">
               <h2 className="text-lg font-bold text-gray-200 mb-2 group-hover:text-primary transition-colors">{post.title}</h2>

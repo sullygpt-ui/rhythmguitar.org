@@ -1,4 +1,5 @@
 import { createMetadata } from '@/lib/metadata';
+import { publishedOn } from '@/lib/publishDates';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQSection from '@/components/FAQSection';
 
@@ -25,8 +26,8 @@ export default function SyncopationGuitarPage() {
     description: 'Learn what syncopation means on guitar with exercises and genre examples.',
     author: { '@type': 'Organization', name: 'RhythmGuitar.org' },
     publisher: { '@type': 'Organization', name: 'RhythmGuitar.org' },
-    datePublished: '2026-02-19',
-    dateModified: '2026-02-19',
+    datePublished: publishedOn('/syncopation-guitar'),
+    dateModified: publishedOn('/syncopation-guitar'),
   };
 
   const faqJsonLd = {

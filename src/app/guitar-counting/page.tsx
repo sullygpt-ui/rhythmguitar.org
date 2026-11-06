@@ -1,6 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
+import { publishedOn } from '@/lib/publishDates';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQSection from '@/components/FAQSection';
+import Link from 'next/link';
 
 export const metadata = createMetadata({
   title: 'How to Count Rhythm on Guitar: Quarter Notes to Sixteenths',
@@ -23,7 +25,8 @@ export default function GuitarCountingPage() {
     headline: 'How to Count Rhythm on Guitar: Quarter Notes to Sixteenths',
     author: { '@type': 'Organization', name: 'RhythmGuitar.org' },
     publisher: { '@type': 'Organization', name: 'RhythmGuitar.org' },
-    datePublished: '2026-02-05',
+    datePublished: publishedOn('/guitar-counting'),
+    dateModified: publishedOn('/guitar-counting'),
   };
 
   const faqJsonLd = {
@@ -183,7 +186,7 @@ export default function GuitarCountingPage() {
           <li>Leave empty boxes for rests</li>
         </ol>
         <p>
-          This visual approach makes abstract rhythms concrete. It&apos;s one of the key teaching tools in the <a href="/go/rrg1">Real Rhythm Guitar course</a>, and once you start using rhythm grids, you&apos;ll wonder how you ever learned patterns without them.
+          This visual approach makes abstract rhythms concrete. It&apos;s one of the key teaching tools in the <Link href="/go/rrg1" prefetch={false}>Real Rhythm Guitar course</Link>, and once you start using rhythm grids, you&apos;ll wonder how you ever learned patterns without them.
         </p>
 
         <h2>Practice Exercises</h2>
@@ -249,7 +252,7 @@ export default function GuitarCountingPage() {
           <li><a href="/rhythm-vs-lead-guitar">Rhythm vs Lead Guitar</a> — Understanding the rhythm guitarist&apos;s role</li>
         </ul>
         <p>
-          For a complete, structured approach that takes you from counting basics through advanced rhythm concepts, the <a href="/go/rrg1">Real Rhythm Guitar Level 1</a> course is the most comprehensive resource available. <a href="/best-rhythm-guitar-course">Read our full review</a>.
+          For a complete, structured approach that takes you from counting basics through advanced rhythm concepts, the <Link href="/go/rrg1" prefetch={false}>Real Rhythm Guitar Level 1</Link> course is the most comprehensive resource available. <a href="/best-rhythm-guitar-course">Read our full review</a>.
         </p>
 
         <h2>Frequently Asked Questions</h2>
