@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gsc:status": "node scripts/gsc-status.mjs",
+    "gsc:sitemap": "node scripts/gsc-submit-sitemap.mjs",
+    "gsc:report": "node scripts/gsc-report.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.98.0",

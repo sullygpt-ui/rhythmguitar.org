@@ -34,3 +34,54 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Analytics and Search Console
+
+**Google Analytics 4** — property `G-6YWVEGXP4V`, tag in `src/app/layout.tsx`.
+Data starts 2026-03-27, when the tag went in. Custom events:
+
+| Event | Fires on |
+|---|---|
+| `affiliate_click` | the `/go/[slug]` redirect pages |
+| `outbound_click` | any in-page link to `signalsmusic.studio` |
+
+GA4 answers "how much traffic, to which pages, and what do people do". It does
+**not** report search rankings, impressions, or the queries people searched —
+Google strips the query from the referrer, so GA4 shows only "Organic Search".
+That is what Search Console is for.
+
+**Google Search Console** — scripts in `scripts/`, no dependencies, sharing the
+service-account credential from the NotRenewing project (same GCP project).
+Point `GSC_KEY_PATH` elsewhere to use a different key, `GSC_SITE` to target a
+different property.
+
+```bash
+npm run gsc:status    # is the property set up and readable?
+npm run gsc:sitemap   # submit https://rhythmguitar.org/sitemap.xml
+npm run gsc:report    # clicks, impressions, positions, what is nearly ranking
+npm run gsc:report 90 # same over 90 days instead of the default 28
+```
+
+`gsc:status` prints the remaining manual steps if the property does not exist
+yet. Creating and verifying a property cannot be scripted — it needs a signed-in
+Google account — but verification via the **Google Analytics** method is instant,
+because the GA4 tag is already on every page. No code change needed.
+
+If you ever need the meta-tag verification method instead, set
+`GOOGLE_SITE_VERIFICATION` in Vercel and redeploy; `layout.tsx` emits the tag
+only when that var is set. The pages are statically prerendered, so the value is
+baked in at build time and a redeploy is required.
+
+## Storage
+
+Supabase, borrowed from the **NotRenewing** project (ref `cmcndptzwsussurxxqqq`)
+rather than a project of its own. Tables here are namespaced with a
+`rhythmguitar_` prefix — keep that convention:
+
+- `rhythmguitar_subscribers` — newsletter signups (`/api/newsletter`)
+- `rhythmguitar_outbound_clicks` — affiliate clicks (`/api/track-outbound`)
+
+`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are set in Vercel for
+**Production only**, so these routes return 503 on preview deployments.
+`GET /api/track-outbound` returns aggregate counts to anyone and raw rows only
+with an `Authorization: Bearer $CLICKS_ADMIN_TOKEN` header.
