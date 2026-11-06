@@ -45,6 +45,13 @@ export default function CoursesPage() {
       <p className="text-gray-400 mb-16 max-w-2xl text-lg">
         All courses from Signals Music Studio. Whether you&apos;re starting from scratch or advancing your skills, there&apos;s a course for you.
       </p>
+      <p className="text-gray-400 mb-16 max-w-2xl">
+        Not sure which to pick? See our{' '}
+        <Link href="/rhythm-guitar-courses-compared" className="text-primary hover:text-accent underline">
+          side-by-side comparison of the rhythm guitar courses
+        </Link>
+        .
+      </p>
 
       {/* Hero treatment for RRG1 */}
       <section className="mb-16">

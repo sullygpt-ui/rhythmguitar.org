@@ -208,7 +208,7 @@ export default function LearnRhythmGuitarPage() {
           While free resources (including the guides on this site) can take you a long way, a structured course can dramatically accelerate your learning by providing a clear path from A to B without gaps.
         </p>
         <p>
-          We recommend <strong><a href="/go/rrg1">Real Rhythm Guitar Level 1</a></strong> by Jake Lizzio (Signals Music Studio) as the best structured course for building rhythm guitar foundations. It covers all the skills we&apos;ve discussed in this guide — counting, strumming, patterns, chord changes, and chart reading — in 22 video lessons with a printable PDF workbook. Read our <a href="/best-rhythm-guitar-course">full review here</a>.
+          We recommend <strong><a href="/go/rrg1">Real Rhythm Guitar Level 1</a></strong> by Jake Lizzio (Signals Music Studio) as the best structured course for building rhythm guitar foundations. It covers all the skills we&apos;ve discussed in this guide — counting, strumming, patterns, chord changes, and chart reading — in 22 video lessons with a printable PDF workbook. Read our <a href="/best-rhythm-guitar-course">full review here</a>, or see how it compares to the alternatives in our <a href="/rhythm-guitar-courses-compared">courses comparison</a>.
         </p>
         <p>
           Free resources on this site to continue your learning:

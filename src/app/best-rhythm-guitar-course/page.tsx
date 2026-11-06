@@ -285,6 +285,9 @@ export default function BestRhythmGuitarCoursePage() {
           Jake Lizzio&apos;s teaching is clear and effective. The progressive structure means you never feel lost. The rhythm grid is a genuinely innovative tool. The price is fair for the value. And the student reviews speak for themselves — this course works.
         </p>
         <p>
+          Want to see how it stacks up against the alternatives before you decide? We put the options side by side in our <a href="/rhythm-guitar-courses-compared">rhythm guitar courses comparison</a>.
+        </p>
+        <p>
           Whether you&apos;re a beginner who&apos;s struggling with <a href="/strumming-patterns">strumming patterns</a>, an intermediate player who can&apos;t keep time with a band, or an experienced guitarist who knows deep down that your rhythm could be better — this course is for you.
         </p>
         <p>

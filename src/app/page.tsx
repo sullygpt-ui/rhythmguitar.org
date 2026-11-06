@@ -4,6 +4,18 @@ import TestimonialCard from '@/components/TestimonialCard';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import NewsletterForm from '@/components/NewsletterForm';
 import { reviews } from '@/lib/reviews';
+import { createMetadata } from '@/lib/metadata';
+
+// The root layout supplies a title and description for every page but no
+// canonical, so '/' was the one page shipping without one. path: '' keeps the
+// existing title exactly as it was (createMetadata only appends the site name
+// to sub-pages).
+export const metadata = createMetadata({
+  title: 'RhythmGuitar.org — Master Rhythm Guitar',
+  description:
+    'Your complete resource for mastering rhythm guitar. Free guides, strumming patterns, timing exercises, and expert course reviews.',
+  path: '',
+});
 
 const benefits = [
   {
