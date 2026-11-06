@@ -62,15 +62,23 @@ npm run gsc:report    # clicks, impressions, positions, what is nearly ranking
 npm run gsc:report 90 # same over 90 days instead of the default 28
 ```
 
-`gsc:status` prints the remaining manual steps if the property does not exist
-yet. Creating and verifying a property cannot be scripted — it needs a signed-in
-Google account — but verification via the **Google Analytics** method is instant,
-because the GA4 tag is already on every page. No code change needed.
+The property is **`https://rhythmguitar.org/`** (URL-prefix, verified
+2026-11-06). A domain property was not an option: DNS is at Network Solutions,
+not Vercel, so no TXT record can be added from here.
 
-If you ever need the meta-tag verification method instead, set
-`GOOGLE_SITE_VERIFICATION` in Vercel and redeploy; `layout.tsx` emits the tag
-only when that var is set. The pages are statically prerendered, so the value is
-baked in at build time and a redeploy is required.
+Verification is by **meta tag**, and it is load-bearing — Google rechecks it and
+will unverify the property if the tag disappears. The token lives in the Vercel
+env var `GOOGLE_SITE_VERIFICATION`; `layout.tsx` emits the tag only when that var
+is set. **Do not delete that variable.** The pages are statically prerendered, so
+the value is baked in at build time and any change needs a redeploy.
+
+Owners: the service account above, and `Michael.K.Sullivan@gmail.com` — the
+Google account that owns GCP project `fluted-lambda-295723`. That is the account
+to sign in with for the Search Console UI; it is not the same account as the
+Gmail or Vercel logins used elsewhere here.
+
+Search Console does not backfill: data accrues from the 2026-11-06 verification
+date forward, so the first useful report is a week or two out.
 
 ## Storage
 

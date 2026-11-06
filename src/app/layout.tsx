@@ -8,10 +8,11 @@ export const metadata: Metadata = {
   title: 'RhythmGuitar.org — Master Rhythm Guitar',
   description: 'Your complete resource for mastering rhythm guitar. Free guides, strumming patterns, timing exercises, and expert course reviews.',
   metadataBase: new URL('https://rhythmguitar.org'),
-  // Fallback for Search Console's meta-tag verification. Verifying via the GA4
-  // tag already on the page needs no code, so this normally stays unset. If you
-  // do use it, note the pages are statically prerendered: the value is baked in
-  // at build time, so setting the var requires a redeploy.
+  // Search Console ownership, verified 2026-11-06 by this meta tag. Google
+  // rechecks it and unverifies the property if it disappears, so the Vercel env
+  // var GOOGLE_SITE_VERIFICATION must stay set. The pages are statically
+  // prerendered, so the value is baked in at build time and changing it needs a
+  // redeploy.
   verification: process.env.GOOGLE_SITE_VERIFICATION
     ? { google: process.env.GOOGLE_SITE_VERIFICATION }
     : undefined,
